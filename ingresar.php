@@ -1,34 +1,46 @@
 <?php
-    $user=$_POST["usuario"];
-    $pass=$_POST["password"];
+session_start();
 
-    $servurl="http://192.168.100.2:3001/usuarios/$user/$pass";
-    $curl=curl_init($servurl);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $usuario = $_POST["usuario"];
+    $password = $_POST["password"];
+
+    $servurl = "http://localhost:3001/usuarios/$usuario/$password";
+    $curl = curl_init($servurl);
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $response=curl_exec($curl);
+    $response = curl_exec($curl);
     curl_close($curl);
 
-    if ($response===false){
-        header("Location:index.html");
+    if ($response === false) {
+        header("Location: index.html");
+        exit();
     }
 
     $resp = json_decode($response);
 
-    if (count($resp) != 0){
+    if (count($resp) != 0) {
         session_start();
-        $_SESSION["usuario"]=$user;
-        if ($user == "Entrenador"){ 
-            echo "Entrenador";
+        $_SESSION["usuario"] = $usuario;
+        $_SESSION["rutina"] = $resp[0]->rutina;
+        $_SESSION["peso"] = $resp[0]->peso;
+        $_SESSION["rol"] = $resp[0]->rol;
+        $role = $_SESSION["rol"];
+        
+        if ($role == "Entrenador") {
             header("Location: entrenador.php");
-        } 
-        else { 
-            echo "Usuario";
-            header("Location:usuario.php");
-        } 
+            exit();
+        } else {
+            header("Location: usuario.php");
+            exit();
+        }
+    } else {
+        header("Location: index.html");
+        exit();
     }
-    else {
-    header("Location:index.html"); 
-    }
-
+} else {
+    // Si alguien intenta acceder directamente a este script, no deberíamos permitirlo.
+    header("Location: index.html");
+    exit();
+}
 ?>
