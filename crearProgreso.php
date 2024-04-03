@@ -5,7 +5,7 @@
         header("Location: index.html");
     }
     // URL de la solicitud POST
-    $url = "http://localhost:3003/crearProgreso";
+    $url = "http://www.gimnasiouao.com:3003/crearProgreso";
 
     // Datos que se enviarán en la solicitud POST
     $data = array(

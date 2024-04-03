@@ -7,7 +7,7 @@
     $id=$_POST["id"];
     
     // URL de la solicitud POST
-    $url = "http://localhost:3002/rutinas/$us";
+    $url = "http://www.gimnasiouao.com:3002/rutinas/$us";
 
     // Datos que se enviarán en la solicitud POST
     $data = array(

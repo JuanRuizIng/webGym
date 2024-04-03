@@ -5,7 +5,7 @@
     $objetivoKilos=$_POST["objetivoKilos"];
 
     // URL de la solicitud POST
-    $url = 'http://localhost:3002/crearRutina';
+    $url = 'http://www.gimnasiouao.com:3002/crearRutina';
 
     // Datos que se enviarán en la solicitud POST
     $data = array(

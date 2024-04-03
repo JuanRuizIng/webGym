@@ -53,7 +53,7 @@
     </thead>
     <tbody>
     <?php
-        $servurl="http://localhost:3001/usuarios/crearUsuario";
+        $servurl="http://www.gimnasiouao.com:3001/usuarios/crearUsuario";
         $curl=curl_init($servurl);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

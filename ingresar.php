@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
 
-    $servurl = "http://localhost:3001/usuarios/$usuario/$password";
+    $servurl = "http://www.gimnasiouao.com:3001/usuarios/$usuario/$password";
     $curl = curl_init($servurl);
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

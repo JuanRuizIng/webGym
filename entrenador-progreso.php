@@ -52,7 +52,7 @@
     </thead>
     <tbody>
     <?php
-        $servurl="http://localhost:3003/progresos";
+        $servurl="http://www.gimnasiouao.com:3003/progresos";
         $curl=curl_init($servurl);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

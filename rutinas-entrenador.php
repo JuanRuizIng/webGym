@@ -51,7 +51,7 @@
     </thead>
     <tbody>
     <?php
-        $servurl="http://localhost:3002/rutinas";
+        $servurl="http://www.gimnasiouao.com:3002/rutinas";
         $curl=curl_init($servurl);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

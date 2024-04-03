@@ -7,7 +7,7 @@
     $rol=$_POST["rol"];
 
     // URL de la solicitud POST
-    $url = 'http://localhost:3001/usuarios/crearUsuario';
+    $url = 'http://www.gimnasiouao.com:3001/usuarios/crearUsuario';
 
     // Datos que se enviarán en la solicitud POST
     $data = array(

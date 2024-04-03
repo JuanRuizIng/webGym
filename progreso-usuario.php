@@ -55,7 +55,7 @@
     </thead>
     <tbody>
     <?php
-        $servurl="http://localhost:3003/progresos/$us";
+        $servurl="http://www.gimnasiouao.com:3003/progresos/$us";
         $curl=curl_init($servurl);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
